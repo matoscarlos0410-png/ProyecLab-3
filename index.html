@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ProyecLab | Descubre Sausal</title>
+
+  <meta
+    name="description"
+    content="ProyecLab: guía digital para descubrir, conectar y valorar Sausal."
+  >
+
+  <!-- ICONO / FAVICON INCLUIDO EN EL CÓDIGO -->
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='25' fill='%23071122'/%3E%3Cpath d='M24 70L50 20L76 70H62L50 45L38 70Z' fill='%2300eaff'/%3E%3Ccircle cx='50' cy='78' r='7' fill='%238b5cf6'/%3E%3C/svg%3E"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- FONDO -->
+  <div class="background">
+    <span class="particle p1"></span>
+    <span class="particle p2"></span>
+    <span class="particle p3"></span>
+    <span class="particle p4"></span>
+    <span class="particle p5"></span>
+
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+  </div>
+
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+
+    <a href="#inicio" class="logo">
+
+      <!-- LOGO EN SVG -->
+      <svg
+        class="logo-icon"
+        viewBox="0 0 100 100"
+        aria-label="Logo ProyecLab"
+      >
+
+        <defs>
+          <linearGradient id="logoGradient" x1="0" x2="1">
+            <stop offset="0%" stop-color="#00eaff"/>
+            <stop offset="100%" stop-color="#8b5cf6"/>
+          </linearGradient>
+        </defs>
+
+        <rect
+          x="5"
+          y="5"
+          width="90"
+          height="90"
+          rx="25"
+          fill="#071122"
+        />
+
+        <path
+          d="M25 70 L50 20 L75 70 L62 70 L50 45 L38 70Z"
+          fill="url(#logoGradient)"
+        />
+
+        <circle
+          cx="50"
+          cy="78"
+          r="7"
+          fill="#00eaff"
+        />
+
+      </svg>
+
+      <span class="logo-text">
+        Proyec<span>Lab</span>
+      </span>
+
+    </a>
+
+
+    <button
+      class="menu-button"
+      id="menuButton"
+      aria-label="Abrir menú"
+    >
+      ☰
+    </button>
+
+
+    <nav id="mainNav">
+
+      <a href="#inicio">Inicio</a>
+      <a href="#explora">Explora</a>
+      <a href="#negocios">Negocios</a>
+      <a href="#lugares">Lugares</a>
+      <a href="#cultura">Cultura</a>
+      <a href="#guia">Guía</a>
+      <a href="#proyecto">EPT</a>
+
+    </nav>
+
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+
+      <div class="hero-content">
+
+        <span class="badge">
+          PROYECTO EPT • SAUSAL
+        </span>
+
+        <h1>
+          Descubre
+          <span>Sausal</span>
+        </h1>
+
+        <p>
+          Una guía digital para encontrar lugares,
+          negocios, servicios, instituciones educativas,
+          parques, actividades, cultura y tradiciones
+          de nuestra comunidad.
+        </p>
+
+
+        <div class="hero-buttons">
+
+          <a
+            href="#explora"
+            class="btn primary"
+          >
+            🔎 Explorar Sausal
+          </a>
+
+          <a
+            href="#lugares"
+            class="btn secondary"
+          >
+            📍 Ver lugares
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-card">
+
+        <div class="hero-icon">
+          📍
+        </div>
+
+        <span class="mini-label">
+          PROYEC LAB
+        </span>
+
+        <h2>
+          Todo Sausal,
+          <span>más fácil de encontrar.</span>
+        </h2>
+
+        <p>
+          Busca una institución, parque, negocio,
+          servicio o lugar y abre su ubicación
+          directamente en Google Maps.
+        </p>
+
+
+        <div class="hero-stats">
+
+          <div>
+            <strong id="totalPlaces">0</strong>
+            <small>registros</small>
+          </div>
+
+          <div>
+            <strong>MAPS</strong>
+            <small>acceso directo</small>
+          </div>
+
+          <div>
+            <strong>100%</strong>
+            <small>responsive</small>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- EXPLORADOR -->
+    <section
+      class="section"
+      id="explora"
+    >
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          EXPLORA SAUSAL
+        </span>
+
+        <h2>
+          Encuentra lo que necesitas
+        </h2>
+
+        <p>
+          Busca por nombre, categoría o actividad.
+        </p>
+
+      </div>
+
+
+      <div class="search-container">
+
+        <span class="search-icon">
+          🔎
+        </span>
+
+        <input
+          id="searchInput"
+          type="search"
+          autocomplete="off"
+          placeholder="Ej.: colegio, parque, mercado, restaurante..."
+        >
+
+        <button
+          id="clearSearch"
+          class="clear-search"
+          type="button"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <div class="filters">
+
+        <button
+          class="filter active"
+          data-category="all"
+        >
+          Todo
+        </button>
+
+        <button
+          class="filter"
+          data-category="negocio"
+        >
+          🏪 Negocios
+        </button>
+
+        <button
+          class="filter"
+          data-category="servicio"
+        >
+          🛠️ Servicios
+        </button>
+
+        <button
+          class="filter"
+          data-category="educacion"
+        >
+          🏫 Colegios
+        </button>
+
+        <button
+          class="filter"
+          data-category="inicial"
+        >
+          🧒 Jardines
+        </button>
+
+        <button
+          class="filter"
+          data-category="parque"
+        >
+          🌳 Parques
+        </button>
+
+        <button
+          class="filter"
+          data-category="lugar"
+        >
+          📍 Lugares
+        </button>
+
+        <button
+          class="filter"
+          data-category="transporte"
+        >
+          🚌 Transporte
+        </button>
+
+        <button
+          class="filter"
+          data-category="cultura"
+        >
+          🎭 Cultura
+        </button>
+
+      </div>
+
+
+      <div
+        class="results-info"
+        id="resultsInfo"
+      ></div>
+
+
+      <div
+        class="cards-grid"
+        id="results"
+      ></div>
+
+
+      <div
+        class="empty-state"
+        id="noResults"
+      >
+        <span>🔎</span>
+
+        <h3>
+          No encontramos resultados
+        </h3>
+
+        <p>
+          Prueba con otra palabra o categoría.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- NEGOCIOS -->
+    <section
+      class="section"
+      id="negocios"
+    >
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          ECONOMÍA LOCAL
+        </span>
+
+        <h2>
+          Negocios y emprendimientos
+        </h2>
+
+        <p>
+          Lugares encontrados mediante información
+          pública disponible.
+        </p>
+
+      </div>
+
+
+      <div
+        class="cards-grid"
+        id="businessGrid"
+      ></div>
+
+    </section>
+
+
+    <!-- LUGARES -->
+    <section
+      class="section"
+      id="lugares"
+    >
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          DESCUBRE
+        </span>
+
+        <h2>
+          Lugares de Sausal
+        </h2>
+
+        <p>
+          Aquí podrás encontrar parques, colegios,
+          escuelas, jardines, espacios recreativos
+          y otros puntos de interés.
+        </p>
+
+      </div>
+
+
+      <div class="category-grid">
+
+        <button
+          class="category-card"
+          data-jump="parque"
+        >
+
+          <span>🌳</span>
+
+          <strong>
+            Parques
+          </strong>
+
+          <small>
+            Espacios públicos y recreativos
+          </small>
+
+        </button>
+
+
+        <button
+          class="category-card"
+          data-jump="educacion"
+        >
+
+          <span>🏫</span>
+
+          <strong>
+            Colegios y escuelas
+          </strong>
+
+          <small>
+            Instituciones educativas
+          </small>
+
+        </button>
+
+
+        <button
+          class="category-card"
+          data-jump="inicial"
+        >
+
+          <span>🧒</span>
+
+          <strong>
+            Jardines e inicial
+          </strong>
+
+          <small>
+            Educación inicial
+          </small>
+
+        </button>
+
+
+        <button
+          class="category-card"
+          data-jump="lugar"
+        >
+
+          <span>📍</span>
+
+          <strong>
+            Otros lugares
+          </strong>
+
+          <small>
+            Piscina, plaza, cerro y más
+          </small>
+
+        </button>
+
+      </div>
+
+
+      <div
+        class="cards-grid"
+        id="placesGrid"
+      ></div>
+
+    </section>
+
+
+    <!-- CULTURA -->
+    <section
+      class="section"
+      id="cultura"
+    >
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          IDENTIDAD LOCAL
+        </span>
+
+        <h2>
+          Cultura y tradiciones
+        </h2>
+
+        <p>
+          Conoce algunos elementos de la identidad
+          cultural de Sausal.
+        </p>
+
+      </div>
+
+
+      <div
+        class="cards-grid"
+        id="cultureGrid"
+      ></div>
+
+    </section>
+
+
+    <!-- SAUSAL PRODUCE -->
+    <section class="section">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          PRODUCCIÓN
+        </span>
+
+        <h2>
+          Sausal produce
+        </h2>
+
+        <p>
+          Actividades económicas vinculadas
+          con la comunidad.
+        </p>
+
+      </div>
+
+
+      <div class="info-grid">
+
+        <article class="info-card">
+          <span>🌱</span>
+
+          <h3>
+            Agricultura
+          </h3>
+
+          <p>
+            La agricultura forma parte importante
+            de las actividades de las familias
+            de Sausal.
+          </p>
+        </article>
+
+
+        <article class="info-card">
+          <span>🛒</span>
+
+          <h3>
+            Comercio
+          </h3>
+
+          <p>
+            Los negocios y servicios locales
+            forman parte de la economía de
+            la comunidad.
+          </p>
+        </article>
+
+
+        <article class="info-card">
+          <span>🐔</span>
+
+          <h3>
+            Actividad avícola
+          </h3>
+
+          <p>
+            La actividad avícola aparece entre
+            las actividades económicas relacionadas
+            con las familias de Sausal.
+          </p>
+        </article>
+
+
+        <article class="info-card">
+          <span>🚜</span>
+
+          <h3>
+            Agroexportación
+          </h3>
+
+          <p>
+            La comunidad también está vinculada
+            con empresas y actividades agroexportadoras.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- GUÍA -->
+    <section
+      class="section"
+      id="guia"
+    >
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          GUÍA RÁPIDA
+        </span>
+
+        <h2>
+          ¿Qué estás buscando?
+        </h2>
+
+      </div>
+
+
+      <div class="guide-grid">
+
+        <a href="#negocios">
+          <span>🍽️</span>
+          <strong>
+            Comer o comprar
+          </strong>
+          <small>
+            Negocios locales
+          </small>
+        </a>
+
+
+        <a href="#lugares">
+          <span>🌳</span>
+          <strong>
+            Salir
+          </strong>
+          <small>
+            Parques y lugares
+          </small>
+        </a>
+
+
+        <a href="#lugares">
+          <span>🏫</span>
+          <strong>
+            Estudiar
+          </strong>
+          <small>
+            Colegios y escuelas
+          </small>
+        </a>
+
+
+        <a href="#lugares">
+          <span>🧒</span>
+          <strong>
+            Educación inicial
+          </strong>
+          <small>
+            Jardines
+          </small>
+        </a>
+
+
+        <a href="#cultura">
+          <span>🎭</span>
+          <strong>
+            Conocer la cultura
+          </strong>
+          <small>
+            Costumbres y tradiciones
+          </small>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROYECTO -->
+    <section
+      class="section"
+      id="proyecto"
+    >
+
+      <div class="project-box">
+
+        <span class="section-label">
+          PROYECTO EPT
+        </span>
+
+        <h2>
+          ¿Por qué ProyecLab?
+        </h2>
+
+        <p>
+          En Sausal existe información sobre diferentes
+          actividades, servicios, lugares e instituciones,
+          pero puede resultar difícil encontrarla organizada
+          en un solo espacio digital.
+        </p>
+
+
+        <div class="solution-box">
+
+          <span>💡</span>
+
+          <div>
+
+            <strong>
+              Nuestra solución
+            </strong>
+
+            <p>
+              ProyecLab organiza información útil de Sausal
+              en una guía digital sencilla, visual y accesible,
+              incorporando enlaces directos a Google Maps
+              para facilitar la ubicación de cada lugar.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FUENTES -->
+    <section class="section">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          FUENTES
+        </span>
+
+        <h2>
+          Información y verificación
+        </h2>
+
+        <p>
+          ProyecLab diferencia la información
+          verificada de aquella que necesita confirmación.
+        </p>
+
+      </div>
+
+
+      <div class="sources">
+
+        <a
+          href="https://iejcm.edu.pe/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>🏫</span>
+
+          <div>
+            <strong>
+              I.E. José Carlos Mariátegui
+            </strong>
+
+            <small>
+              Fuente institucional
+            </small>
+          </div>
+        </a>
+
+
+        <a
+          href="https://identicole.minedu.gob.pe/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>📚</span>
+
+          <div>
+            <strong>
+              Identicole - MINEDU
+            </strong>
+
+            <small>
+              Información educativa
+            </small>
+          </div>
+        </a>
+
+
+        <a
+          href="https://www.gob.pe/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>🏛️</span>
+
+          <div>
+            <strong>
+              Gob.pe
+            </strong>
+
+            <small>
+              Información pública del Estado
+            </small>
+          </div>
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- WHATSAPP -->
+  <button
+    class="whatsapp-button"
+    id="whatsappButton"
+    aria-label="Abrir ventana de WhatsApp"
+  >
+    💬
+  </button>
+
+
+  <div
+    class="whatsapp-window"
+    id="whatsappWindow"
+  >
+
+    <div class="whatsapp-header">
+
+      <div class="whatsapp-title">
+
+        <div class="whatsapp-logo">
+          ✓
+        </div>
+
+        <div>
+          <strong>
+            ProyecLab
+          </strong>
+
+          <small>
+            WhatsApp
+          </small>
+        </div>
+
+      </div>
+
+
+      <button
+        id="closeWhatsapp"
+        aria-label="Cerrar WhatsApp"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <div class="whatsapp-body">
+
+      <div class="whatsapp-bubble">
+        👋 ¡Hola! Puedes escribir un mensaje
+        para contactar con ProyecLab.
+      </div>
+
+
+      <textarea
+        id="whatsappMessage"
+        placeholder="Escribe tu mensaje..."
+      >Hola, quiero enviar información para ProyecLab.</textarea>
+
+
+      <button
+        class="send-whatsapp"
+        id="sendWhatsapp"
+      >
+        🟢 Enviar por WhatsApp
+      </button>
+
+
+      <small class="whatsapp-note">
+        Configura el número oficial de WhatsApp
+        en script.js.
+      </small>
+
+    </div>
+
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-logo">
+      Proyec<span>Lab</span>
+    </div>
+
+    <p>
+      Descubre, conecta y valora Sausal.
+    </p>
+
+    <small>
+      © <span id="year"></span> ProyecLab
+    </small>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
